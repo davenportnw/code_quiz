@@ -2,3 +2,11 @@ header {
     background-color: lightgreen;
     font-family: 'Cinzel', serif;
 }
+
+section {
+    margin: 100px;
+    padding: 10px;
+    background-color: lightcoral;
+    text-align: center;
+}
+
