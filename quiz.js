@@ -18,17 +18,19 @@ function setTime(){
 
 
 //Hide homepage when start is clicked
-// var quizP = document.getElementById("quizPortion");
-// quizP.setAttribute("Class", "hide");
 
-// var homeP = document.getElementById("homePage");
+
+
+
 
 //Gathering elements//
 let score = 0;
 let scoreBoard = document.getElementById("score");
 let results = document.getElementById("results");
 let scoreNum = document.querySelector(".scoreNumber");
-
+var quizP = document.getElementById("quizPortion");
+var homeP = document.getElementById("homePage");
+var resultsP = document.getElementById("resultsPage");
 
 
 //*Questions*//
@@ -88,8 +90,13 @@ var questions = [
 
 const lastQuestion = questions.length - 1;
 let currentQuestion = 0;
+quizP.setAttribute("Class", "hide");
+resultsP.setAttribute("Class", "hide");
 
 function startQuiz(){
+    quizP.removeAttribute("Class");
+    homeP.setAttribute("Class", "hide");
+
     loadQuestion();
 
 }
@@ -125,7 +132,9 @@ function checkQ(answer) {
 }
 
 function showResults() {
+    quizP.setAttribute("Class", "hide");
+    resultsP.removeAttribute("Class");
+
     scoreNum.innerHTML = "Your score was " + score;
-    
 }
 start.addEventListener("click", startQuiz);
