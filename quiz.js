@@ -10,6 +10,7 @@ function setTime(){
 
         if(secondsLeft === 0) {
             clearInterval(timerInterval);
+            showResults();
         }
 
     }, 1000);
@@ -26,7 +27,8 @@ function setTime(){
 let score = 0;
 let scoreBoard = document.getElementById("score");
 let results = document.getElementById("results");
-let allD = document.getElementById("done");
+let scoreNum = document.querySelector(".scoreNumber");
+
 
 
 //*Questions*//
@@ -91,6 +93,7 @@ function startQuiz(){
     loadQuestion();
 
 }
+
 function loadQuestion() {
 
     let q = questions[currentQuestion];
@@ -103,45 +106,26 @@ function loadQuestion() {
 
 
 function checkQ(answer) {
-    console.log("currentQuestion" , currentQuestion); //working
-    console.log("answer", answer); //working
-    console.log("questions" , questions); //working
-    console.log("questions[0]", questions[0]); //working
-    console.log("questions[currentQuestion]", questions[currentQuestion]); //working
-    console.log("questions[currentQuestion].answer.correct" , questions[currentQuestion].answers.correct); //working
-    
-    
-    
     if(answer === questions[currentQuestion].answers.correct) {
          score++;  
-        console.log("score", score);  //working
     }else{
         score--;
-    }
-    
-    scoreBoard.innerHTML = "<h1>" + score + "</h1>";
 
-    if(currentQuestion < lastQuestion) {
+    }  
+    scoreBoard.innerHTML = "<h1>" + score + "</h1>";
+   if(currentQuestion < lastQuestion) {
         currentQuestion++;
         loadQuestion();
     }else{
-        allDone();
+        if (secondsLeft === 0 || currentQuestion === lastQuestion); {
+            console.log("timeEl" , timeEl);
+            showResults();
+        }
     }
-
 }
-    
-function allDone() {
-    if (secondsLeft == 0 || currentQuestion <= lastQuestion); {
-        clearInterval(timeEl);
-        showResults();
-    }
-    
-
-}
-
 
 function showResults() {
-    results.style.display = "block",
-    results.innerHTML = "<p>" + score + "</p>";
+    scoreNum.innerHTML = "Your score was " + score;
+    
 }
 start.addEventListener("click", startQuiz);
