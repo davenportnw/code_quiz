@@ -134,7 +134,6 @@ function checkQ(answer) {
 function showResults() {
     quizP.setAttribute("Class", "hide");
     resultsP.removeAttribute("Class");
-
     scoreNum.innerHTML = "Your score was " + score;
 }
 start.addEventListener("click", startQuiz);
