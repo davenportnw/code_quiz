@@ -117,7 +117,7 @@ function checkQ(answer) {
          score++;  
     }else{
         score--;
-
+        secondsLeft -= 5;
     }  
     scoreBoard.innerHTML = "<h1>" + score + "</h1>";
    if(currentQuestion < lastQuestion) {
