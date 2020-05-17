@@ -1,12 +1,64 @@
 header {
     background-color: lightgreen;
-    font-family: 'Cinzel', serif;
+    font-family: 'DM Mono', monospace;
 }
 
 section {
+    border-radius: 25px;
     margin: 100px;
     padding: 10px;
     background-color: lightcoral;
     text-align: center;
 }
 
+#question {
+    font-family: 'DM Mono', monospace;
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    
+}
+
+.choice {
+    font-family: 'DM Mono', monospace;
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    
+}
+
+
+.hide {
+    display: none;
+}
+
+button {
+    color:black;
+}
+
+.score {
+    color: black;
+}
+
+.home {
+    
+    color: black;
+    text-shadow: 2px 2px white;
+    font-family: 'DM Mono', monospace;
+}
+
+#start   {
+    font-family: 'DM Mono', monospace;
+    color:white;
+    border: thick double white;
+    font-size: 30px;
+    cursor: pointer;
+    margin: 4px 2px;
+    display:inline-block;
+    text-emphasis: center;
+    padding: 15px 32px;
+    background-color: black;
+    
+}

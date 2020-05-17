@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,500;1,400&display=swap" rel="stylesheet"> 
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 
 <body>
@@ -18,21 +20,53 @@
                 </div>
                 <div class="col-md-6">
                     <h1 class="text-right" id="timer"></h1>
+                    <div class="text-right" id="score"></div>
                 </div>
              </div>
         </div>
     </Header>
 
-    <section>
+ <!-- Start up page -->
+    <section id="homePage">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                        <h1 class="home">Welcome! Push Start to begin the quiz!</h1>
+                        <div id="start" onclick="setTime()">Start Quiz</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quizPortion">
         <div class="container-md">
             <div class="row">
-                <div class="quiz"></div>
-                <div class="results"></div>
-                <div class="submit"></div>
-                   <!-- <button type="button" class="btn btn-primary btn-lg btn-block" id="startButton">Start</button> -->
+            <div id="quiz"></div>
+            <div id="question" class="align-self-center"></div>
+                <div id="choices" class="align-self-center">
+                    <div class="choice" id="A" onclick="checkQ('A')"></div>
+                    <div class="choice" id="B" onclick="checkQ('B')"></div>
+                    <div class="choice" id="C" onclick="checkQ('C')"></div>
+                    <div class="choice" id="D" onclick="checkQ('D')"></div>
+                    <div class="submit"></div>
+                    <div class="results"></div>
+                </div>
+                
             </div>
         </div>
 
+    </section>
+
+<!-- All Done Page -->
+<section id="done">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="done"></div>
+                    <div class="results"></div>
+                </div>
+            </div>
+        </div>
     </section>
 
 
@@ -41,11 +75,7 @@
 
 
 
-
-
-
-
-<script src="app.js"></script>  
+<script src="quiz.js"></script>  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 
