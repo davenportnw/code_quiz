@@ -26,11 +26,12 @@ function setTime(){
 //Gathering elements//
 let score = 0;
 let scoreBoard = document.getElementById("score");
+let scoreNum = document.getElementById("scoreNumber");
 let results = document.getElementById("results");
-let scoreNum = document.querySelector(".scoreNumber");
 var quizP = document.getElementById("quizPortion");
 var homeP = document.getElementById("homePage");
 var resultsP = document.getElementById("resultsPage");
+let submitBtn = document.getElementById("submit");
 
 
 //*Questions*//
@@ -125,7 +126,6 @@ function checkQ(answer) {
         loadQuestion();
     }else{
         if (secondsLeft === 0 || currentQuestion === lastQuestion); {
-            console.log("timeEl" , timeEl);
             showResults();
         }
     }
@@ -134,6 +134,11 @@ function checkQ(answer) {
 function showResults() {
     quizP.setAttribute("Class", "hide");
     resultsP.removeAttribute("Class");
+    clearInterval(timerInterval);
+    submitBtn.addEventListener('click', function() {
+        event.preventDefault();
+    })
     scoreNum.innerHTML = "Your score was " + score;
+
 }
 start.addEventListener("click", startQuiz);

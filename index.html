@@ -41,17 +41,17 @@
     <section id="quizPortion">
         <div class="container-md">
             <div class="row">
-            <div id="quiz"></div>
-            <div id="question" class="align-self-center"></div>
-                <div id="choices" class="align-self-center">
-                    <div class="choice" id="A" onclick="checkQ('A')"></div>
-                    <div class="choice" id="B" onclick="checkQ('B')"></div>
-                    <div class="choice" id="C" onclick="checkQ('C')"></div>
-                    <div class="choice" id="D" onclick="checkQ('D')"></div>
-                </div>
-              </div>
+                <div id="question" class="align-self-center"></div>
+            </div>
+            <div class="row">
+                <div id="quiz"></div>
+                <div class="choice col" id="A" onclick="checkQ('A')"></div>
+                <div class="choice col" id="B" onclick="checkQ('B')"></div>
+                <div class="w-100"></div>
+                <div class="choice col" id="C" onclick="checkQ('C')"></div>
+                <div class="choice col" id="D" onclick="checkQ('D')"></div>
+            </div>
         </div>
-
     </section>
 
     <!-- Results Page -->
@@ -60,11 +60,11 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1 class="score"> </h1>
+                    <h1 class="scoreNumber"> </h1>
                     <h2> Submit your score below by entering your name!</h2>
                     <form action="" method="post">
                         <input type="text" name="fname" required>
-                        <input type="submit" value="Submit">    
+                        <input type="submit" id="submit" value="Submit">    
                       </form>
                 </div>
             </div>

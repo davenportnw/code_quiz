@@ -14,6 +14,7 @@ section {
 #question {
     font-family: 'DM Mono', monospace;
     text-align: center;
+    font-size: 30px;
     padding: 10px;
     margin: 5px;
     cursor: pointer;
@@ -22,7 +23,8 @@ section {
 
 .choice {
     font-family: 'DM Mono', monospace;
-    text-align: center;
+    font-size: 25px;
+    border: 2px solid black;
     padding: 10px;
     margin: 5px;
     cursor: pointer;
