@@ -34,7 +34,7 @@ var resultsP = document.getElementById("resultsPage");
 let submitBtn = document.getElementById("submit");
 let nameInput = document.getElementById("name");
 let highscoreP = document.getElementById("highscorePage");
-let hspageName = document.getElementById("highscoreName");
+
 let hspageScore = document.getElementById("highscoreScore");
 
 //*Questions*//
@@ -146,14 +146,14 @@ function showResults() {
         localStorage.setItem(name, score);
         var person = JSON.stringify(name);
         var scoreT = JSON.stringify(score);
-        
+ 
         function showHighscores() {
             highscoreP.removeAttribute("Class");
             scoreBoard.removeAttribute("Class");
             resultsP.setAttribute("Class", "hide");
-            console.log("hspageName", hspageName);
-            hspageName.innerHTML = person;
-            hspageScore.innerHTML = scoreT;
+            console.log("person", person)
+            document.getElementById("highscoreName").innerHTML = person;
+            document.getElementById("highscoreScore").innerHTML = scoreT;
         }
         showHighscores();
     })
