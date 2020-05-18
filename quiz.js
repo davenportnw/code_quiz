@@ -27,13 +27,12 @@ function setTime(){
 let score = 0;
 let scoreBoard = document.getElementById("score");
 let scoreNum = document.getElementById("scoreNumber");
-console.log("scoreNum", scoreNum);  
 let results = document.getElementById("results");
 var quizP = document.getElementById("quizPortion");
 var homeP = document.getElementById("homePage");
 var resultsP = document.getElementById("resultsPage");
 let submitBtn = document.getElementById("submit");
-
+let nameInput = document.getElementById("name");
 
 //*Questions*//
 var questions = [
@@ -136,11 +135,12 @@ function showResults() {
     quizP.setAttribute("Class", "hide");
     resultsP.removeAttribute("Class");
     clearInterval(secondsLeft);
-
-
-
     submitBtn.addEventListener('click', function() {
         event.preventDefault();
+        let name = nameInput.value;
+        let nameStorage = localStorage.getItem("name");
+        localStorage.setItem(name, score);
+
     })
     scoreNum.innerHTML = "Your score was " + score;
 
