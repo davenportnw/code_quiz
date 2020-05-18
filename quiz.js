@@ -27,6 +27,7 @@ function setTime(){
 let score = 0;
 let scoreBoard = document.getElementById("score");
 let scoreNum = document.getElementById("scoreNumber");
+console.log("scoreNum", scoreNum);  
 let results = document.getElementById("results");
 var quizP = document.getElementById("quizPortion");
 var homeP = document.getElementById("homePage");
@@ -134,7 +135,10 @@ function checkQ(answer) {
 function showResults() {
     quizP.setAttribute("Class", "hide");
     resultsP.removeAttribute("Class");
-    clearInterval(timerInterval);
+    clearInterval(secondsLeft);
+
+
+
     submitBtn.addEventListener('click', function() {
         event.preventDefault();
     })
