@@ -33,6 +33,9 @@ var homeP = document.getElementById("homePage");
 var resultsP = document.getElementById("resultsPage");
 let submitBtn = document.getElementById("submit");
 let nameInput = document.getElementById("name");
+let highscoreP = document.getElementById("highscorePage");
+let hspageName = document.getElementById("highscoreName");
+let hspageScore = document.getElementById("highscoreScore");
 
 //*Questions*//
 var questions = [
@@ -93,6 +96,7 @@ const lastQuestion = questions.length - 1;
 let currentQuestion = 0;
 quizP.setAttribute("Class", "hide");
 resultsP.setAttribute("Class", "hide");
+highscoreP.setAttribute("Class" , "hide");
 
 function startQuiz(){
     quizP.removeAttribute("Class");
@@ -140,9 +144,21 @@ function showResults() {
         let name = nameInput.value;
         let nameStorage = localStorage.getItem("name");
         localStorage.setItem(name, score);
-
+        var person = JSON.stringify(name);
+        var scoreT = JSON.stringify(score);
+        
+        function showHighscores() {
+            highscoreP.removeAttribute("Class");
+            scoreBoard.removeAttribute("Class");
+            resultsP.setAttribute("Class", "hide");
+            console.log("hspageName", hspageName);
+            hspageName.innerHTML = person;
+            hspageScore.innerHTML = scoreT;
+        }
+        showHighscores();
     })
-    scoreNum.innerHTML = "Your score was " + score;
+    scoreNum.innerHTML = "Your score was " + score + " with " + secondsLeft + " remaining!";
 
 }
+
 start.addEventListener("click", startQuiz);
